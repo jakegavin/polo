@@ -1,0 +1,25 @@
+<%= render 'shared/content_title', title: 'Coaches' %>
+
+<h5><%= link_to 'New Coach', new_coach_path %></h5>
+<table class="table">
+  <tr>
+    <th>First Name</th>
+    <th>Last Name</th>
+    <th>Title</th>
+    <th>Email</th>
+    <th>Bio</th>
+    <th>Edit</th>
+    <th>Delete</th>
+  </tr>
+  <% @coaches.each do |coach| %>
+    <tr>
+      <td><%= coach.first_name %></td>
+      <td><%= coach.last_name %></td>
+      <td><%= coach.title %></td>
+      <td><%= coach.email %></td>
+      <td><%= coach.bio %></td>
+      <td><%= link_to 'Edit', edit_coach_path(coach) %></td>
+      <td><%= link_to 'Delete', coach, confirm: "Are you sure you want to delete #{coach.first_name} #{coach.last_name}?", method: :delete %></td>
+    </tr>
+  <% end %>
+</table>

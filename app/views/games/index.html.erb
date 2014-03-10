@@ -1,0 +1,6 @@
+<%= render 'shared/content_title', title: 'Games' %>
+
+<h5><%= link_to 'New Game', new_game_path %></h5>
+
+
+<%= render 'admin_game_list', games: @games %>

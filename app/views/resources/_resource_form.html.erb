@@ -1,0 +1,30 @@
+<%= render 'shared/form_errors', obj: @resource %>
+
+<%= form_for @resource do |f| %>
+  <div class="input-group">
+    <%= f.label :name %>
+    <%= f.text_field :name, class: 'form-control' %>
+  </div>
+  <br>
+  <% if @resource.new_record? %>
+    <div class='input-group'>
+      <%= f.label :resource %>
+      <%= f.file_field :resource, class: 'btn btn-default btn-file' %>
+    </div>
+    <br>
+  <% end %>
+  <div class='input-group'>
+    <%= f.label :description %>
+    <%= f.text_area :description, class: 'form-control' %>
+  </div>
+  <br>
+  <div class='input-group'>
+    <%= f.label :active %>
+    <%= f.check_box :active, class: 'checkbox' %>
+  </div>
+  <br>
+  <div class='input-group'>
+    <%= f.submit class: 'btn btn-primary' %>
+  </div>
+
+<% end %>

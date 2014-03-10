@@ -1,0 +1,27 @@
+<%= render 'shared/form_errors', obj: @tournament %>
+
+<%= form_for @tournament do |f| %>
+  <div class='input-group'>
+    <%= f.label :name %>
+    <%= f.text_field :name, class: 'form-control' %>
+  </div>
+  <br>
+  <div class='input-group'>
+    <%= f.label :location %>
+    <%= f.text_field :location, class: 'form-control' %>
+  </div>
+  <br>
+  <div class='input-group'>
+    <%= f.label :start_date %>
+    <%= f.date_field :start_date, class: 'form-control' %>
+  </div>
+  <br>
+  <div class='input-group'>
+    <%= f.label :end_date %>
+    <%= f.date_field :end_date, class: 'form-control' %>
+  </div>
+  <br>
+  <div class='input-group'>
+    <%= f.submit (@tournament.new_record? ? 'Create Tournament' : 'Update Tournament'), class: 'btn btn-primary' %>
+  </div>
+<% end %>

@@ -1,0 +1,61 @@
+<%= render 'shared/content_title', title: 'Players List' %>
+
+<%= link_to 'New Player', new_player_path %>
+
+<% @teams.each do |team| %>
+  <h3><%= link_to team.name, edit_team_path(team) %></h3>
+  <% if team.players.empty? %>
+    <h5>No players on this team.</h5>
+  <% else %>
+    <table class="table table-condensed"> 
+      <tr>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Number</th>
+        <th>Position</th>
+        <th>Grad Year</th>
+        <th>Edit</th>
+        <th>Delete</th>
+      </tr>
+      <% team.players.each do |player| %>
+        <tr>
+          <td><%= player.first_name %></td>
+          <td><%= player.last_name %></td>
+          <td><%= player.number %></td>
+          <td><%= player.position %></td>
+          <td><%= player.grad_year %></td>
+          <td><%= link_to 'Edit', edit_player_path(player) %></td>
+          <td><%= link_to "Delete", player, confirm: "Are you sure?", method: :delete %></td>
+        </tr>
+      <% end %>
+    </table>
+  <% end %>
+<% end %>
+
+<h3>Unassigned Players</h3>
+<% if @unassigned_players.empty? %>
+  <h5>No unassigned players</h5>
+<% else %>
+  <table border="1"> 
+    <tr>
+      <th>First Name</th>
+      <th>Last Name</th>
+      <th>Number</th>
+      <th>Position</th>
+      <th>Grad Year</th>
+      <th>Edit</th>
+      <th>Delete</th>
+    </tr>
+    <% @unassigned_players.each do |player| %>
+      <tr>
+        <td><%= player.first_name %></td>
+        <td><%= player.last_name %></td>
+        <td><%= player.number %></td>
+        <td><%= player.position %></td>
+        <td><%= player.grad_year %></td>
+        <td><%= link_to 'Edit', edit_player_path(player) %></td>
+        <td><%= link_to "delete", player, confirm: "Are you sure?", method: :delete %></td>
+      </tr>
+    <% end %>
+  </table>
+<% end %>

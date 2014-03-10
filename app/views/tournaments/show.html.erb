@@ -1,0 +1,18 @@
+<%= render 'shared/content_title', title: "Tournament: #{@tournament.name}" %>
+
+<%= link_to 'Edit Tournament', edit_tournament_path(@tournament) %>
+
+<dl class="dl-horizontal">
+  <dt>Name: </dt>
+  <dd><%= @tournament.name %></dd>
+  <dt>Location: </dt>
+  <dd><%= @tournament.location %></dd>
+  <dt>Start Date: </dt>
+  <dd><%= @tournament.start_date %></dd>
+  <dt>End Date: </dt>
+  <dd><%= @tournament.end_date %></dd>
+</dl>
+
+<h4>Games</h4>
+
+<%= render 'games/admin_game_list', games: @tournament.games %>

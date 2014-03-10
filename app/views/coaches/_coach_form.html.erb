@@ -1,0 +1,32 @@
+<%= render 'shared/form_errors', obj: @coach %>
+
+<%= form_for @coach do |f| %>
+  <div class='input-group'> 
+    <%= f.label :first_name %>
+    <%= f.text_field :first_name, class: 'form-control' %>
+  </div>
+  <br>
+  <div class='input-group'>
+    <%= f.label :last_name %>
+    <%= f.text_field :last_name, class: 'form-control' %>
+  </div>
+  <br>
+  <div class='input-group'>
+    <%= f.label :title %>
+    <%= f.text_field :title, class: 'form-control' %>
+  </div>
+  <br>
+  <div class='input-group'>
+    <%= f.label :email %>
+    <%= f.text_field :email, class: 'form-control' %>
+  </div>
+  <br>
+  <div class='input-group'>
+    <%= f.label :bio %>
+    <%= f.text_area :bio, class: 'form-control' %>
+  </div>
+  <br>
+  <div class='input-group'>
+    <%= f.submit (@coach.new_record? ? 'Create Coach' : 'Edit Coach'), class: 'btn btn-primary' %>
+  </div>
+<% end %>

@@ -1,0 +1,22 @@
+<%= render 'shared/content_title', title: 'Resources' %>
+
+<%= link_to 'New Resource', new_resource_path %>
+<br><br>
+
+<h4>Active Resources</h4>
+
+<% if !@active_resources.empty? %>
+  <%= render 'resources_table', resources: @active_resources %>
+<% else %>
+  <h5>There are no active resources.</h5>
+<% end %>
+
+<br>
+
+<h4>Inactive Resources</h4>
+
+<% if !@inactive_resources.empty? %>
+  <%= render 'resources_table', resources: @inactive_resources %>
+<% else %>
+  <h5>There are no inactive resources.</h5>
+<% end %>

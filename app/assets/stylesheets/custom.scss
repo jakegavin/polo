@@ -1,0 +1,34 @@
+@import "bootstrap";
+
+html,
+body {
+  overflow-x: hidden; /* Prevent scroll on narrow devices */
+}
+
+html {
+    background: url('./bg.jpg') no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+ body{
+    background-color: rgba(0,0,0,0);
+   /* padding-top: 70px; Used for fixed navbar */
+    color: #BBB;
+}
+
+.maincontent{
+    background-color:rgba(25,25,25,0.9);
+    padding: 15px;
+    -moz-border-radius: 15px;
+    border-radius: 10px;
+    margin-bottom: 13px;
+    max-width: 1080px;
+}
+
+.field_with_errors {
+  @extend .has-error;
+  margin: 0px;
+}

@@ -1,0 +1,42 @@
+<%= render 'shared/form_errors', obj: @game %>
+
+<%= form_for @game do |f| %>
+  <div class='input-group'>
+    <%= f.label :tournament %>
+    <%= f.collection_select :tournament_id, Tournament.all, :id, :name, class: 'form-control' %>
+  </div>
+  <br>
+  <div class='input-group'>
+    <%= f.label :pool %>
+    <%= f.text_field :pool, class: 'form-control' %>
+  </div>
+  <br>
+  <div class='input-group'>
+    <%= f.label :team %>
+    <%= f.collection_select :team_id, Team.all, :id, :name, class: 'form-control' %>
+  </div>
+  <br>
+  <div class='input-group'>
+    <%= f.label :opponent %>
+    <%= f.text_field :opponent, class: 'form-control' %>
+  </div>
+  <br>
+  <div class='input-group'>
+    <%= f.label :home %>
+    <%= f.check_box :home, class: 'form-control' %>
+  </div>
+  <br>
+  <div class='input-group'>
+    <%= f.label :date %>
+    <%= f.date_field :date, class: 'form-control' %>
+  </div>
+  <br>
+  <div class='input-group'>
+    <%= f.label :time %>
+    <%= f.time_field :time, class: 'form-control' %>
+  </div>
+  <br>
+  <div class='input-group'>
+    <%= f.submit (@game.new_record? ? 'Create Game' : 'Update Game'), class: 'btn btn-primary' %>
+  </div>
+<% end %>

@@ -1,0 +1,20 @@
+<table class='table'>
+  <tr>
+    <th>Name</th>
+    <th>Link</th>
+    <th>Description</th>
+    <th>Last Modified</th>
+    <th>Edit Info</th>
+    <th>Delete</th>
+  </tr>
+  <% resources.each do |resource| %>
+  <tr>
+    <td><%= resource.name %> </td>
+    <td><%= link_to resource.filename, "/resources/#{resource.filename}" %> </td>
+    <td><%= resource.description %> </td>
+    <td><%= resource.updated_at %> </td>
+    <td><%= link_to 'Edit Info', edit_resource_path(resource) %> </td>
+    <td><%= link_to 'Delete', resource, confirm: "Are you sure you want to delete #{resource.name}", method: :delete %> </td>
+  </tr>
+  <% end %>
+</table>

@@ -1,0 +1,38 @@
+<%= render 'shared/form_errors', obj: @player %>
+
+
+<%= form_for @player do |f| %>
+  <div class='input-group'>
+    <%= f.label :first_name %>
+    <%= f.text_field :first_name, class: 'form-control' %>
+  </div>
+  <br>
+  <div class='input-group'>
+    <%= f.label :last_name %>
+    <%= f.text_field :last_name, class: 'form-control' %>
+  </div>
+  <br>
+  <div class='input-group'>
+    <%= f.label :team %>
+    <%= f.collection_select :team_id, Team.all, :id, :name, class: 'form-control' %>
+  </div>
+  <br>
+  <div class='input-group'>
+    <%= f.label :number %>
+    <%= f.number_field :number, class: 'form-control' %>
+  </div>
+  <br>
+  <div class='input-group'>
+    <%= f.label :position %>
+    <%= f.text_field :position, class: 'form-control' %>
+  </div>
+  <br>
+  <div class='input-group'>
+    <%= f.label :grad_year %>
+    <%= f.number_field :grad_year, class: 'form-control' %>
+  </div>
+  <br>
+  <div class='input-group'>
+    <%= f.submit (@player.new_record? ? 'Create Player' : 'Update Player'), class: 'btn btn-primary' %>
+  </div>
+<% end %>
