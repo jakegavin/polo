@@ -1,0 +1,14 @@
+<%= render 'shared/content_title', title: "Coaches" %>
+
+<% @coaches.each do |coach| %>
+  <div>
+    <!-- <img style="float: left; margin-right: .7em; height:auto; width:auto; max-width:180px; max-height:180px;" src="" class="img-rounded"> -->
+    <h3><%= "#{coach.first_name} #{coach.last_name}" %></h3>
+    <h4><%= coach.title %></h4>
+    <% if coach.email %>
+      <h4><a href="mailto:<%= coach.email %>" target="_blank"><span class="glyphicon glyphicon-envelope"></span>Email</a></h5>
+    <% end %>
+    <p><%= coach.bio %></p>
+    <br>
+  </div>
+<% end %>

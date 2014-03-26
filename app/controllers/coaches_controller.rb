@@ -1,9 +1,13 @@
 class CoachesController < ApplicationController
-  layout "admin"
+  layout "admin", except: [:coaching_staff]
 
   before_action :set_coach, only: [:edit, :update, :destroy]
 
   def index
+    @coaches = Coach.all
+  end
+
+  def coaching_staff
     @coaches = Coach.all
   end
 
