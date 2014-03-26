@@ -11,21 +11,16 @@ Team.create(name: "Girls Team")
 10.times do |x|
   Player.create(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, team: Team.first, number: x + 1, position: (x == 0 ? "Goalie" : "Utility"), grad_year: rand(2014..2017))
 end
-
 10.times do |x|
   Player.create(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, team: Team.last, number: x + 1, position: (x == 0 ? "Goalie" : "Utility"), grad_year: rand(2014..2017))
 end
 
 Coach.create(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, title: "Head Coach", email: Faker::Internet.free_email, bio: Faker::Lorem.sentences(rand(10..15)).join(" "))
-
 Coach.create(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, title: "Assistant Coach", email: Faker::Internet.free_email, bio: Faker::Lorem.sentences(rand(10..15)).join(" "))
 
 Tournament.create(name: "Spring Tournament", start_date: "2014-4-10", end_date: "2014-4-13", location: "Eugene, OR")
-
 Tournament.create(name: "Summer Tournament", start_date: "2014-6-1", end_date: "2014-6-3", location: "Ashland, OR")
-
 Tournament.create(name: "Fall Tournament", start_date: "2014-10-20", end_date: "2014-10-23", location: "Sacramento, CA")
-
 Tournament.create(name: "State Championships", start_date: "2014-11-13", end_date: "2014-11-16", location: "Portland, OR")
 
 Tournament.all.each do |tournament|
