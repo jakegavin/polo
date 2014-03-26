@@ -1,5 +1,5 @@
 class ResourcesController < ApplicationController
-  layout "admin"
+  layout "admin", except: [:files]
   before_action :set_resource, only: [:edit, :update, :destroy]
 
   def index
@@ -7,12 +7,15 @@ class ResourcesController < ApplicationController
     @inactive_resources = Resource.where(active: false)
   end
 
+  def files
+    @resources = Resource.where(active: true)
+  end
+
   def new
     @resource = Resource.new
   end
 
   def create
-    binding.pry
     @resource = Resource.new(resource_params)
     @resource.filename = params[:resource][:resource].original_filename
 
@@ -34,7 +37,7 @@ class ResourcesController < ApplicationController
   end
 
   def update
-    if @resource.update(resouce_params)
+    if @resource.update(resource_params)
       flash[:notice] = "Resource updated"
       redirect_to resources_path
     else

@@ -1,0 +1,12 @@
+<%= render 'shared/content_title', title: "Club Resources" %>
+
+<% if @resources.empty? %>
+  <h5 class="text-center">Sorry, there aren't any resources available right now. Please check back later</h5>
+<% else %>
+  <% @resources.each do |resource| %>
+    <h4><span class="glyphicon glyphicon-save"></spam><%= link_to resource.filename, "/resources/#{resource.filename}" %></h4>
+    <h6>Last modified on <%= resource.updated_at %></h6>
+    <p><%= resource.description %></p>
+    <br>
+  <% end %>
+<% end %>
