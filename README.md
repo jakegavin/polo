@@ -6,13 +6,21 @@ I originally designed this site in Django. Now that I am more familiar with Rail
 ### To Do
 * General Items
   * Clean up images
+  * Clean up forms
+    * Use rails bootstrap forms
+* Home Page
   * Fix jumbotron font
+  * Weird loading issues
 * Coaches
   * Build controller
   * Find gem for images.
+    * Paperclip
 * Schedule
-  * Write front-end
+  * Write date formatting helpers
+    * Apply to backend
 * Resources
   * Write front-end
+  * Password protect
 * Admin
   * Require authentication
+    * Write sessions
