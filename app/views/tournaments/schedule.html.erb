@@ -5,7 +5,7 @@
     <div class= "panel panel-default">
       <div class="panel-title">
         <a href="#collapse<%= index %>" class="accordion-toggle" data-toggle="collapse" data-parent="#accordion<%= index %>">
-          <h4><%= "#{tournament.start_date} - #{tournament.end_date}: #{tournament.name} in #{tournament.location}" %></h4>
+          <h4><%= "#{format_date_t(tournament.start_date)} - #{format_date_t(tournament.end_date)}: #{tournament.name} in #{tournament.location}" %></h4>
         </a>
       </div>
       <div id="collapse<%= index %>" class="panel-panel collapse collapse">
@@ -13,7 +13,7 @@
           <ul>
             <% if tournament.games %>
               <% tournament.games.each do |game| %>
-              <li><%= "#{game.date} #{game.time} - Ashland #{game.team.name} vs #{game.opponent}" %></li>
+              <li><%= "#{format_date_g(game.date)} at #{format_time_g(game.time)} - Ashland #{game.team.name} vs #{game.opponent}" %></li>
               <% end %>
             <% else %>
               <p>Game information hasn't been added to this tournament yet. Please check back soon.</p>
