@@ -1,4 +1,4 @@
-<nav class="navbar navbar-default navbar-inverse" role="navigation">
+<nav class="navbar navbar-fixed-top navbar-inverse" role="navigation">
   <div class="container">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-colapse">
@@ -12,10 +12,10 @@
     <div class="collapse navbar-collapse">
       <ul class="nav navbar-nav navbar-right">
         <li><%= link_to 'Roster', roster_path %></li>
-        <li><%= link_to 'Coaches', '#' %></li>
-        <li><%= link_to 'Schedule', '#' %></li>
+        <li><%= link_to 'Coaches', coaching_staff_path %></li>
+        <li><%= link_to 'Schedule', schedule_path %></li>
         <li><%= link_to 'Photos', photos_path %></li>
-        <li><%= link_to 'Resources', '#' %></li>
+        <li><%= link_to 'Resources', files_path %></li>
       </ul>
     </div>
   </div>

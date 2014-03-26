@@ -5,6 +5,11 @@ body {
   overflow-x: hidden; /* Prevent scroll on narrow devices */
 }
 
+h1, h2, h3 {
+margin-top: 2px;
+margin-bottom: 10px;
+}
+
 html {
     background: url('./bg.jpg') no-repeat center center fixed; 
     -webkit-background-size: cover;
@@ -15,7 +20,7 @@ html {
 
  body{
     background-color: rgba(0,0,0,0);
-   /* padding-top: 70px; Used for fixed navbar */
+    padding-top: 70px;
     color: #BBB;
 }
 
@@ -31,4 +36,21 @@ html {
 .field_with_errors {
   @extend .has-error;
   margin: 0px;
+}
+
+
+.panel{
+    background-color:  rgba(30, 30, 30, .75);
+}
+
+.panel-title {
+    margin-left: 0.5em;
+}
+
+.panel-body{
+    padding: 0px;
+}
+
+.panel ul {
+    list-style-type:none;
 }
