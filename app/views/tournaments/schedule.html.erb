@@ -1,0 +1,30 @@
+<%= render 'shared/content_title', title: "Schedule" %>
+
+<% @tournaments.each_with_index do |tournament, index| %>
+  <div class="panel-group" id="accordian<%= index %>">
+    <div class= "panel panel-default">
+      <div class="panel-title">
+        <a href="#collapse<%= index %>" class="accordion-toggle" data-toggle="collapse" data-parent="#accordion<%= index %>">
+          <h4><%= "#{tournament.start_date} - #{tournament.end_date}: #{tournament.name} in #{tournament.location}" %></h4>
+        </a>
+      </div>
+      <div id="collapse<%= index %>" class="panel-panel collapse collapse">
+        <div class="panel-body">
+          <ul>
+            <% if tournament.games %>
+              <% tournament.games.each do |game| %>
+              <li><%= "#{game.date} #{game.time} - Ashland #{game.team.name} vs #{game.opponent}" %></li>
+              <% end %>
+            <% else %>
+              <p>Game information hasn't been added to this tournament yet. Please check back soon.</p>
+            <% end %>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+  <% end %>

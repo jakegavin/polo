@@ -1,10 +1,14 @@
 class TournamentsController < ApplicationController
-  layout "admin"
+  layout "admin", except: [:schedule]
 
   before_action :set_tournament, only: [:edit, :update, :show, :destroy]
 
   def index
     @tournaments = Tournament.all
+  end
+
+  def schedule
+    @tournaments = Tournament.all.order("start_date ASC")
   end
 
   def show
