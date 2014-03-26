@@ -16,8 +16,7 @@ I originally designed this site in Django. Now that I am more familiar with Rail
   * Find gem for images.
     * Paperclip
 * Schedule
-  * Write date formatting helpers
-    * Apply to backend
+  * Use helpers on backend
 * Resources
   * Write front-end
   * Password protect
